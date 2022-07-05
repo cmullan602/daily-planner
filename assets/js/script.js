@@ -10,11 +10,16 @@ var hour15 = document.querySelector("#hour-15");
 var hour16 = document.querySelector("#hour-16");
 var hour17 = document.querySelector("#hour-17");
 var timeBlock = document.querySelector(".time-block");
+var goodWork = document.querySelector(".description");
+var timeArr = Array.from(tasks);
+
 
 var today = moment()
 $("#currentDay").text(today.format("dddd, MMMM Do"));
 
-console.log(today)
+var currentHour = moment().format('hour');
+
+console.log(timeArr)
 
 
 renderLastTasks();
@@ -28,39 +33,47 @@ timeBlock.addEventListener("click", function(event){
     }
     if(selectedButton === '9'){
         localStorage.setItem("hour-9", hour9.value)
+        $(goodWork).text("Task set for 9am")
     }
     if(selectedButton === '10'){
         localStorage.setItem("hour-10", hour10.value)
+        $(goodWork).text("Task set for 10am")
     }
-    if(selectedButton === '11'){
+    if(selectedButton === '11' && hour11.value != ''){
         localStorage.setItem("hour-11", hour11.value)
+        $(goodWork).text("Task set for 11am")
     }
-    if(selectedButton === '12'){
+    if(selectedButton === '12' && hour12.value != ''){
         localStorage.setItem("hour-12", hour12.value)
+        $(goodWork).text("Task set for 12pm")
     }
-    if(selectedButton === '13'){
+    if(selectedButton === '13' && hour13.value != ''){
         localStorage.setItem("hour-13", hour13.value)
+        $(goodWork).text("Task set for 1pm")
     }
-    if(selectedButton === '14'){
+    if(selectedButton === '14' && hour14.value != ''){
         localStorage.setItem("hour-14", hour14.value)
+        $(goodWork).text("Task set for 2pm")
     }
-    if(selectedButton === '15'){
+    if(selectedButton === '15' && hour15.value != ''){
         localStorage.setItem("hour-15", hour15.value)
+        $(goodWork).text("Task set for 3pm")
     }
-    if(selectedButton === '16'){
+    if(selectedButton === '16' && hour16.value != ''){
         localStorage.setItem("hour-16", hour16.value)
+        $(goodWork).text("Task set for 4pm")
     }
-    if(selectedButton === '17'){
+    if(selectedButton === '17' && hour17.value != ''){
         localStorage.setItem("hour-17", hour17.value)
+        $(goodWork).text("Task set for 5pm")
     }
-   
+
 })
 
 
-
-
 function renderLastTasks () {
-    var userInput9 = localStorage.getItem("hour-9")
+
+     var userInput9 = localStorage.getItem("hour-9")
     hour9.textContent = userInput9
 
     var userInput10 = localStorage.getItem("hour-10")
@@ -87,15 +100,9 @@ function renderLastTasks () {
     var userInput17 = localStorage.getItem("hour-17")
     hour17.textContent = userInput17
 }
-//if time is in past turn grey 
-
-//else if time is current highlight red
-
-//else highlight red 
 
 function turnColors9 (){
-    var currentTime = moment().set('hour', 09);
-    console.log(currentTime)
+    var currentTime = moment().set('hour', 9);
     if(currentTime < today){
         hour9.classList.add("past");
     }
@@ -107,13 +114,14 @@ function turnColors9 (){
     }
 }
 
+
+
 function turnColors10 (){
     var currentTime = moment().set('hour', 10);
-    console.log(currentTime)
     if(currentTime < today){
         hour10.classList.add("past");
     }
-    if(currentTime == today){
+    if(currentTime === today){
         hour10.classList.add("present")
     }
     if(currentTime > today){
@@ -123,11 +131,10 @@ function turnColors10 (){
 
 function turnColors11 (){
     var currentTime = moment().set('hour', 11);
-    console.log(currentTime)
     if(currentTime < today){
         hour11.classList.add("past");
     }
-    if(currentTime == today){
+    if(currentTime === today){
         hour11.classList.add("present")
     }
     if(currentTime > today){
@@ -137,12 +144,11 @@ function turnColors11 (){
 
 function turnColors12 (){
     var currentTime = moment().set('hour', 12);
-    console.log(currentTime)
     if(currentTime < today){
         hour12.classList.add("past");
     }
-    if(currentTime == today){
-        hour12.classList.add("present")
+    if(currentTime == currentHour){
+        hour12.classList.add(".present")
     }
     if(currentTime > today){
         hour12.classList.add("future");
@@ -151,7 +157,6 @@ function turnColors12 (){
 
 function turnColors13 (){
     var currentTime = moment().set('hour', 13);
-    console.log(currentTime)
     if(currentTime < today){
         hour13.classList.add("past");
     }
@@ -165,7 +170,6 @@ function turnColors13 (){
 
 function turnColors14 (){
     var currentTime = moment().set('hour', 14);
-    console.log(currentTime)
     if(currentTime < today){
         hour14.classList.add("past");
     }
@@ -179,7 +183,6 @@ function turnColors14 (){
 
 function turnColors15 (){
     var currentTime = moment().set('hour', 15);
-    console.log(currentTime)
     if(currentTime < today){
         hour15.classList.add("past");
     }
@@ -193,7 +196,6 @@ function turnColors15 (){
 
 function turnColors16 (){
     var currentTime = moment().set('hour', 16);
-    console.log(currentTime)
     if(currentTime < today){
         hour16.classList.add("past");
     }
@@ -207,7 +209,6 @@ function turnColors16 (){
 
 function turnColors17 (){
     var currentTime = moment().set('hour', 17);
-    console.log(currentTime)
     if(currentTime < today){
         hour17.classList.add("past");
     }
