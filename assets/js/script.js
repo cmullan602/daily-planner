@@ -1,4 +1,4 @@
-var saveButton = document.querySelector(".saveBtn");
+
 var tasks = document.querySelectorAll("textarea");
 var hour9 = document.querySelector("#hour-9");
 var hour10 = document.querySelector("#hour-10");

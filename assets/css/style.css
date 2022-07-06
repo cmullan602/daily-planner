@@ -21,16 +21,17 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-#description {
-  white-space: pre-wrap;
-}
 
 .description {
  display: none;
 }
 
 .show {
-  display: block;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  color: blue;
+  font-size: large;
 }
 
 .time-block {
