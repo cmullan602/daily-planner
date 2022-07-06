@@ -8,7 +8,7 @@
 
 - The project contains a working daily planner with 8 sections where you can input your tasks as they correspond to the hours of the day. If a certain hour is in the past that section will display as gray. Present hours will display as red and hours in the future will display as green. When you save a task a message will pop up letting you know the task was saved.
 
-- I feel like I created a lot of code. The code functions properly and the page works but I feel like I could've simplified things with a couple properly working functions. I tried to work through my original javascript to simplify things but just submitted what worked in the end. 
+- At first I created a mass of code with javascript. After working with my tutor I was able to simplify the code with jquery. Definitely need to continue to work with jquery as it made things so much easier than working with vanilla javascript. 
 
 ### Finished Website
 
